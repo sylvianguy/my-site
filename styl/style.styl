@@ -1,0 +1,551 @@
+/*
+* Theme Name: HackerYou Starter Theme
+* Theme URI: http://hackeryou.com;
+* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Version: 1.0
+* Author: HackerYou
+* Author URI: http://hackeryou.com
+*/
+
+@import '_normalize'
+@import '_typography'
+@import '_navigation'
+@import '_sidebar'
+@import '_comments'
+@import '_footer'
+@import '_mixins'
+/*
+====================================
+Default Styling
+====================================
+*/
+
+
+
+heading-style()
+	color white
+	font-weight 100
+	font-size 1.8em
+	// font-size 2.5em
+	font-weight roman
+	opacity 0.8
+	padding-bottom 4px
+
+icon-style()
+	font-family FontAwesome
+	font-size 1.3em
+	position absolute
+	left 50%		
+	top 50%
+	transform translate(-50%, -50%)
+	color $accent-color
+
+
+h2
+	font-family 'Playfair Display', serif			
+	font-style italic
+	text-align center
+	color $accent-color
+	font-size 5em
+	position relative
+	margin 23px 0
+	font-weight 400
+  
+
+body 
+	color blue
+	font-family 'iowan-old-style'
+
+
+header
+	background-image url("./images/fox.jpg")
+	height 100vh
+	background-attachment fixed
+	background-position center center
+	background-size cover
+	// padding-top 10px
+	position relative
+	.logo 
+		padding-bottom 18px
+		img
+			margin 0 auto
+			display block
+	&:after
+		content ""
+		background rgba(0 0 0 0.3)
+		width 100%
+		height 100%
+		position absolute
+		left 0
+		top 0
+
+	.front-end
+		text-align center
+		position relative
+		padding-bottom 1px
+		&:after
+			content ""
+			width 200px
+			height 2px
+			position absolute
+			bottom 0
+			left 50%
+			transform translateX(-50%)
+			background white
+		h2
+			heading-style()
+
+		.front-end h2
+			font-size 28px
+			// padding-bottom 15px
+
+	.social__buttons
+		ul 
+			padding 0
+			margin-top 26px
+			
+			li 
+				width 77px
+				display inline-block
+				&.twitter
+					position relative
+					&:before
+						content "\f099"
+						icon-style()
+				&.email
+					position relative
+					&:before
+						content "\f0e0"
+						icon-style()
+				&.github
+					position relative
+					&:before
+						content "\f113"
+						icon-style()
+				img
+					width 57px
+					
+	.arrow__down
+		padding-top 50px
+		i 
+			color white
+			font-size 3.4em
+			opacity 0.7
+						
+
+@media $mobile-small
+	.social_buttons
+		ul li 
+			width 85px
+	
+	header .logo
+		padding-top 111px
+		img
+			width 266px
+	
+	// .work_container
+	// 	width 100%
+
+.container 
+	max-width 1200px
+	margin 0 auto
+	
+	.header__content
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		z-index 100
+
+.grid-sizer,
+.work_container
+	width 45%
+
+// @media $mobile-only
+// 	.grid-sizer,
+// 	.work_container
+// 		width 100%
+	
+// 	.work 
+// 		.work_container
+// 			height 475px
+
+
+		
+.clearfix 
+	clear both
+	
+
+	
+	
+.work
+	width 100%
+	height 100vh
+	margin-top 90px
+	.work_container
+		margin-bottom 30px
+		height 575px
+		position relative
+		padding-top 45px
+		
+		.work_square
+			padding: 76px 0;
+			padding-top: 30px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition all 0.5s ease
+			img
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				-webkit-transition: .3s ease-in-out;
+				transition: .3s ease-in-out;
+
+		&:nth-child(1)
+			height 400px
+			border none
+			float right
+			position relative
+			font-size 1.4em
+			line-height 1.2
+			color black
+			h2
+				font-family 'Playfair Display', serif			
+				font-style italic
+				text-align center
+				font-weight 400
+				color black
+				position absolute
+				top 50%
+				left 50%
+				transform translateX(-50%) translateY(-50%)
+				&:before
+					content ""
+					width 260px
+					height 260px
+					border 2px solid $accent-color 
+					position absolute
+					top 0
+					right 24px
+					z-index -1
+					-webkit-transform rotate(44deg)
+					-ms-transform: rotate(44deg)
+					transform: rotate(44deg)
+				&:after
+					content ""
+					width 100px
+					height 4px
+					background black
+					position absolute
+					bottom 0
+					left 50%
+					transform translateX(-50%)
+		&:nth-child(2),
+		&:nth-child(5),
+		&:nth-child(6)
+			background $ll-grey
+			transition all 0.5s ease
+			&:hover
+				.work_square
+					background $l-grey
+					img
+						-webkit-transform: scale(1.1);
+						transform: scale(1.1);
+				
+		
+		&:nth-child(4),
+		&:nth-child(3)
+			background $ll-yellow
+			transition all 0.5s ease
+			&:hover
+				.work_square
+					background $l-yellow
+					img
+						-webkit-transform: scale(1.1);
+						transform: scale(1.1);
+
+
+
+		img
+			width 100%
+			height 100%
+		.bottom_square
+			width 100%
+			height 160px
+			position absolute
+			left 0
+			bottom 0
+			padding 30px
+			&:before
+				content ""
+				position absolute
+				width 100%
+				height 3px 
+				background white
+				top 0
+				left 0
+			h2
+				font-family 'iowan-old-style'
+				font-style normal
+				margin: 9px 0;
+				text-transform uppercase
+				color black
+				font-size 1.3em
+				text-align center
+			h3
+				font-size 1em
+				line-height 1.5
+				color black
+				padding 0px 21px
+
+
+
+.content 
+	float left
+	width 65%
+	margin-right 5%
+
+.about 
+	width 100%
+	height 1000px
+	background url("./images/forest-large.jpg")
+	background-attachment fixed
+	background-position center center
+	background-size cover
+	position relative
+	padding-top 50px
+	&:before
+		content ""
+		width 100%
+		height 100%
+		position absolute
+		background rgba(0,0,0,0.7)
+		top 0
+		left 0
+	.profile_img
+		width 286px
+		margin 0 auto
+		padding-top 95px
+		position relative
+		img 
+			width 100%
+			height 100%
+			border-radius 50%
+		&:before
+			content ""
+			width 260px
+			height 260px
+			border 2px solid $accent-color
+			position absolute
+			top 87px
+			left 31px
+			-webkit-transform rotate(47deg)
+			-ms-transform: rotate(47deg)
+			transform: rotate(47deg)
+	h2
+		font-family 'Playfair Display', serif			
+		font-style italic
+		text-align center
+		position relative
+		margin 23px 0
+		font-weight 400
+		margin-top 83px
+		&:after
+			content ""
+			width 100px
+			height 3px
+			background $accent-color
+			position absolute
+			bottom 0
+			left 50%
+			transform translateX(-50%)
+	p 	
+		font-family 'iowan-old-style'
+		font-size 1.2em
+		text-align center
+		color $l-yellow
+		position relative
+		max-width 608px
+		margin 0 auto
+		line-height 1.9
+		font-weight 100
+
+	
+.blog
+	background white
+	width 100%
+	height 900px
+	position relative
+	padding-bottom 100px
+
+	.container
+		width 90%
+		text-align center
+		padding-bottom 100px
+		
+		h2.blog_heading
+			font-family 'Playfair Display', serif			
+			font-style italic
+			margin 100px 0
+			font-size 5em
+			color black
+			text-align left
+			position relative
+			z-index 43
+			width 46%
+			display inline-block
+			&:before
+				content ""
+				width 260px
+				height 260px
+				border 3px solid $accent-color
+				position absolute
+				top 0
+				left 91px
+				-webkit-transform rotate(47deg)
+				-ms-transform: rotate(47deg)
+				transform: rotate(47deg)
+				z-index -2	
+
+		.blog_line
+			width 47%
+			height 3px
+			background black
+			display inline-block
+			position relative
+			z-index 100
+			vertical-align middle
+			margin-bottom 20px
+		.blog_container
+			border 1px solid black
+			width 30%
+			height 550px
+			display inline-block
+			vertical-align top
+			text-align left
+			position relative
+			z-index 53
+			&:nth-child(4)
+				margin 0 1.6%
+			.blog_square
+				width 100%
+				height 260px
+				
+				img
+					width 100%
+					height 100%
+					object-fit cover
+			.bottom_blog_square
+				margin 0 auto
+				padding 23px
+				
+				h3
+					text-transform uppercase
+					margin-bottom 10px
+					line-height 1.5
+					color black
+					border-bottom 2px solid black
+					padding-bottom 8px
+				a 
+					color black
+					&:nth-child(2)
+						border 1px solid black
+							background black
+							color white
+
+
+.form_section
+	width 100%			
+	height 900px
+	background url("./images/forest-large.jpg")
+	background-attachment fixed
+	background-position center center
+	background-size cover
+	position relative
+	&:before
+		content ""
+		width 100%
+		height 100%
+		position absolute
+		background rgba(0,0,0,0.8)
+		top 0
+		left 0
+	form
+		position relative
+		margin-top 200px
+		width 500px
+		max-width 60%
+		margin 0 auto
+		
+		input, textarea
+			width 100%
+			margin 12px 0
+			background none
+			border none
+			border-bottom 1px solid $l-yellow
+			color $l-yellow
+			font-family 'iowan-old-style'
+			outline none
+			line-height 1.7
+		::-webkit-input-placeholder
+			font-family 'iowan-old-style'
+			color $l-yellow
+
+		:-moz-placeholder /* Firefox 18- */
+			font-family 'iowan-old-style'
+			color $l-yellow
+		::-moz-placeholder   /* Firefox 19+ */
+			font-family 'iowan-old-style'
+			color $l-yellow
+		:-ms-input-placeholder  
+			font-family 'iowan-old-style'
+			color $l-yellow
+		input[type=submit]
+			width 70px
+			height 30px
+			border 1px solid $l-yellow
+			position absolute
+			right 0
+			top 409px
+	h2
+		padding-top 100px
+		padding-bottom 10px
+		&:after
+			content ""
+			width 100px
+			height 3px
+			background $accent-color
+			position absolute
+			bottom 0
+			left 50%
+			transform translateX(-50%)
+		
+	p 
+		position relative
+		color $l-yellow
+		max-width 560px
+		margin 0 auto
+		line-height 1.7
+		padding-bottom 30px
+		margin-bottom 35px
+		
+.full 
+	width 100%
+	
+// @media (max-width: 1011px)
+// 	.work
+// 		.work_container
+// 			height 490px
+
+@media $mobile-only
+	.grid-sizer,
+	.work_container
+		width 100%
+	
+	.work 
+		.work_container
+			height 475px
+
+
+
+

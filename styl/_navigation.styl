@@ -1,0 +1,166 @@
+
+@import '_mixins'
+
+
+a 
+	color black
+	font-size 0.9em
+
+@media $mobile-only
+	menu
+		a
+			padding 7px 0
+			display block
+			
+
+.main-nav-scrolled 
+	position fixed
+	width 100%
+	top 0
+	left 0
+	background white
+	z-index 1000
+	ul
+		padding-bottom 45px
+		border none
+		background white
+		position: absolute;
+		left 50%
+		// right: 0;
+		display none
+		&:after
+			display none
+		img 
+			background none
+
+@media $tablet-and-up
+	.main-nav-scrolled
+		ul
+			display block
+
+
+nav
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index 1000
+	width 100%
+	text-align center
+	
+	
+
+	ul
+		width: 100%
+		margin: 0 auto
+		padding-left: 0
+		position: relative
+		padding-top 35px
+		padding-bottom: 16px;
+		border-bottom 3px solid black
+		z-index 100
+		// display none
+			
+		&:after
+			content ""
+			background grey
+			position absolute
+			bottom 4px
+			left 0
+			width 100%
+			height 2px
+		
+		li
+			display inline
+			margin 0 22px
+			color black
+			&:nth-child(2)
+				padding-right 144px
+				
+		
+
+		img
+			width 120px
+			vertical-align: middle
+			margin-top -17px
+			background white
+			position relative
+			z-index 1000
+			position absolute
+			left: 50%;
+			top: 29px;
+			transform: translate;
+			transform: translateX(-50%);
+
+@media $mobile-only
+	nav ul
+		display none	
+// .show__menu
+// 	display block
+		
+	
+.nav__mobile
+	width 100%
+	position fixed
+	display none
+	.logo__mobile
+		padding-top 8px
+		padding-bottom 1px
+		width 187px
+		img
+			width 111px
+	
+	.menu__trigger
+		width 37px
+		height 23px
+		// border 1px solid black
+		position relative
+		float right 
+		margin-top 26px
+		margin-right 24px
+		// background black
+		.menu__trigger-line
+			width 100%
+			height 3px
+			background black
+			&:before
+				content ""
+				width 100%
+				height 3px
+				background black
+				position absolute
+				top 48%
+				left 0
+			&:after
+				content ""
+				width 100%
+				height 3px
+				background black
+				position absolute
+				bottom 0
+				left 0
+
+@media $mobile-only
+	.nav__mobile
+		display block
+
+ul.menu__mobile
+	list-style none
+	margin-top 89px
+	// background green
+	width 100%
+	padding 15px
+	// position absolute
+	display none
+	
+	&.show__menu
+		display block	
+		position absolute
+		left 0
+		top 0
+	
+	li a 
+		display block	
+		padding 6px 0
+
+
