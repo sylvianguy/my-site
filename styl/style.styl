@@ -419,7 +419,7 @@ header
 			margin-bottom 20px
 		.blog_container
 			// border 1px solid #858585
-			box-shadow: 0px 0px 5px rgba(133,133,133,.5)
+			box-shadow 0px 0px 5px rgba(133,133,133,.5)
 			width 30%
 			height 550px
 			display inline-block
@@ -455,6 +455,39 @@ header
 							background black
 							color white
 
+@media $small-desktop-and-down
+	.blog
+		.container
+			.blog_container
+				height 276px
+				width 100%
+				&:nth-child(4)
+					margin 34px 0
+				
+				.blog_square
+					width 46%
+					height 100%
+					display inline-block
+			
+				.bottom_blog_square
+					width 52%
+					margin 0
+					display inline-block
+					vertical-align top
+					margin 0
+
+@media $mobile-and-down
+	.blog
+		.container 
+			.blog_container
+				height 470px
+				.blog_square
+					width 100%
+					height 230px
+				.bottom_blog_square
+					width 100%
+					
+			    	
 
 .form_section
 	width 100%			
