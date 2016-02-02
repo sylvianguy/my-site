@@ -50,6 +50,7 @@ h2
 	position relative
 	margin 23px 0
 	font-weight 400
+
   
 
 body 
@@ -301,6 +302,18 @@ header
 
 
 
+// @media $mobile-only
+// 	.grid-sizer,
+// 	.work_container
+// 		width 100%
+// 		height 600px
+		
+	
+	// .work 
+	// 	.work_container
+	// 		height 475px
+
+
 .content 
 	float left
 	width 65%
@@ -370,7 +383,26 @@ header
 		margin 0 auto
 		line-height 1.9
 		font-weight 100
+		padding 0 45px
 
+@media $mobile-and-down
+	.about
+		h2
+			margin 63px 0 45px 0
+			font-size 4em
+			&:after
+				bottom -16px
+		p 
+			// max-width 335px
+			font-size 1em
+		.profile_img:before
+			width 200px
+			height 200px
+			top 98px
+			left 40px
+			
+
+				
 	
 .blog
 	background white
@@ -458,6 +490,13 @@ header
 @media $small-desktop-and-down
 	.blog
 		.container
+			.blog_line
+				margin-bottom 45px
+				width 27%
+			h2.blog_heading
+				width 72%
+				min-width 484px
+				margin-bottom 20px
 			.blog_container
 				height 276px
 				width 100%
@@ -478,7 +517,17 @@ header
 
 @media $mobile-and-down
 	.blog
-		.container 
+		.container
+			h2.blog_heading
+				width 62%
+				font-size 4em
+				min-width 220px
+				margin 70px 0 37px 0
+				&:before
+					width 200px
+					height 200px
+					left 11px
+				 
 			.blog_container
 				height 470px
 				.blog_square
@@ -486,6 +535,8 @@ header
 					height 230px
 				.bottom_blog_square
 					width 100%
+
+	
 					
 			    	
 
@@ -563,23 +614,65 @@ header
 		line-height 1.7
 		padding-bottom 30px
 		margin-bottom 35px
+
+@media $mobile-small
+	.form_section 
+		form
+			max-width 100%
+			width 100%
 		
 .full 
 	width 100%
-	
-// @media (max-width: 1011px)
-// 	.work
-// 		.work_container
-// 			height 490px
 
-@media $mobile-only
-	.grid-sizer,
-	.work_container
-		width 100%
 	
+@media $desktop-and-up
 	.work 
 		.work_container
-			height 475px
+			height 525px
+
+			
+@media $small-desktop-and-down
+	.work
+		.work_container
+			height 440px
+			&:nth-child(1)
+				h2:before
+					width 200px
+					height 200px
+
+
+
+@media $mobile-only
+	.work
+		margin-top 0
+		.grid-sizer,
+		.work_container
+			width 100%
+			height 600px
+					
+
+
+// @media $mobile-and-down
+// 	.form_section form h2
+// 		font-size 4em
+// 	h2
+// 		font-size 4em
+
+@media $mobile-and-down
+	.work 
+		margin-top 0
+		.work_container
+			height 415px
+			h2
+				font-size 4em
+				&:before
+					width 200px
+					height 200px
+
+		
+// @media $mobile-small 
+
+
 
 
 
