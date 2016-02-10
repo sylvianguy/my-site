@@ -20,23 +20,23 @@
 
 <header>
   <div class="container">
-    <div class="header__content">
+    <div class="header__content" id="contact">
       <h1></h1>
       <div class="logo">
-        <img src="./wp-content/themes/theme-hackeryou/images/sylvia_logo_big_trimmed.png" alt="">  
+        <img src="./wp-content/themes/theme-hackeryou/images/sylvia_logo_big_02.png" alt="">  
       </div>
-      <div class="front-end">
+      <div id="header__content" class="front-end">
         <h2>Front End Web Developer</h2>
       </div>
       <div class="social__buttons">
-        <ul>
-          <a href=""><li class="twitter"><img src="./wp-content/themes/theme-hackeryou/images/circle.png" alt=""></li></a>
-          <a href=""><li class="email"><img src="./wp-content/themes/theme-hackeryou/images/circle.png" alt=""></li></a>  
-          <a href=""><li class="github"><img src="./wp-content/themes/theme-hackeryou/images/circle.png" alt=""></li></a>
+        <ul id="header__social">
+          <a href="https://twitter.com/SylviaCreates"><li class="twitter"><div class="social__buttons-circle"></div></li></a>
+          <a href="mailto:sylvia.nguyen@gmail.com"><li class="email"><div class="social__buttons-circle"></div></li></a>  
+          <a href="https://github.com/sylvianguy"><li class="github"><div class="social__buttons-circle"></div></li></a>
         </ul>
       </div><!--/.header__content-->
       <div class="arrow__down">
-        <i class="fa fa-angle-down"></i>
+        <a class="scroll" href="#menu"><i class="fa fa-angle-down"></i></a>
       </div>
     </div>
     
@@ -47,4 +47,22 @@
     )); ?> -->
   </div> <!-- /.container -->
 </header><!--/.header-->
+
+<div class="container clearfix">
+  <nav id="menu" class="menu">
+    <div id="menu__trigger" class="menu__trigger">
+      <div class="menu__trigger-line"></div>
+    </div>
+    <div class="logo">
+      <img src="./wp-content/themes/theme-hackeryou/images/sylvia_logo_trimmed.png" alt="">
+    </div>
+    <ul id="toggler" class="menu">
+      <li><a class="scroll" href="#work">WORK</a></li>
+      <li><a class="scroll" href="#about">ABOUT</a></li>
+      <li><img src="./wp-content/themes/theme-hackeryou/images/sylvia_logo_trimmed.png" alt=""></li>
+      <li><a class="scroll" href="#blog">BLOG</a></li>
+      <li><a class="scroll" href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</div>
 

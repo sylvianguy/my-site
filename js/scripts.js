@@ -2,52 +2,67 @@
 
 $(function(){
 
-	$(document).ready( function() {
-	 $('.work').isotope({
-	   // options
-	   itemSelector: '.work_container',
-	   masonry: {
-	     columnWidth: 100,
-	      gutter: 15
-	   }
-
-	 });
-
-	 $('.menu__trigger').on('click', function(){
-		$('ul#menu__mobile').addClass('show__menu');
-		// $('ul#menu__mobile').removeClass('show__menu');
+	$('#menu__trigger').click(function (e){
+		console.log('tracking');
+		e.preventDefault();
+		$('#toggler').toggleClass('show__menu');
 	});
 
-});
-
 //controls sticky nav
-	var  mn = $(".menu");
-	    mns = "main-nav-scrolled";
+	var  menu = $(".menu");
+	    scrolled = "main-nav-scrolled";
 	    hdr = $('header').height();
 
 	$(window).scroll(function() {
 	  if( $(this).scrollTop() > hdr ) {
-	    mn.addClass(mns);
-	    // $('ul#menu__mobile')removeClass('show__menu');
+	    menu.addClass(scrolled, 500);
+	    $('.work').addClass('no__snapping');
 	  } else {
-	    mn.removeClass(mns)
+	    menu.removeClass(scrolled);
+	    $('.work').removeClass('no__snapping');
+	     // $('.work').css('margin-top', '120px');
 	  }
 	});
 
 
+	function checkWidth() {
+		if ($(window).width() < 767) {
+		    $('ul.menu').addClass('menu__mobile');
+			// $('ul.menu')removeClass('main-nav-scrolled');
+		} else {
+		    $('ul.menu').removeClass('menu__mobile');
+		}		
+	}
 
+	$(window).resize(checkWidth);
 
-
-	// $(document).ready(function(){                    
-	//     $(window).scroll(function(){                          
-	//         if ($(this).scrollTop() > 1000) {
-	//             $('#menu').fadeIn(300);
-	//         } else {
-	//             $('#menu').fadeOut(100);
-	//         }
-	//     });
-	// });
-
-
+	//Handles parallax
+	  $(window).scroll(function(e){
+	  	parallaxScroll();
+	  });
+		 
+		function parallaxScroll(){
+			var scrolled = $(window).scrollTop();
+			if ($(window).width() > 820) {
+				$('.header__content').css('top',(340-(scrolled*.25))+'px');
+			}
+		}
+	 
+	 //Handles smooth scroll to anchor
+	 $(".scroll").click(function(event){
+	         event.preventDefault();
+	         //calculate destination place
+	         var dest=0;
+	         if($(this.hash).offset().top > $(document).height()-$(window).height()){
+	              dest=$(document).height()-$(window).height();
+	         }else{
+	              dest=$(this.hash).offset().top;
+	         }
+	         //go to destination
+	         $('html,body').animate({scrollTop:dest}, 900,'swing');
+	     });
 
 });
+
+
+
