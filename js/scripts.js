@@ -5,6 +5,7 @@ $(function(){
 	$('#menu__trigger').click(function (e){
 		console.log('tracking');
 		e.preventDefault();
+		$(this).toggleClass('menu__trigger-close');
 		$('#toggler').toggleClass('show__menu');
 	});
 
@@ -17,9 +18,11 @@ $(function(){
 	  if( $(this).scrollTop() > hdr ) {
 	    menu.addClass(scrolled, 500);
 	    $('.work').addClass('no__snapping');
-	  } else {
+	  
+	  }else {
 	    menu.removeClass(scrolled);
-	    $('.work').removeClass('no__snapping');
+	    $('.work').removeClass('no__snapping')
+	    
 	     // $('.work').css('margin-top', '120px');
 	  }
 	});
@@ -36,21 +39,22 @@ $(function(){
 
 	$(window).resize(checkWidth);
 
-	//Handles parallax
-	  $(window).scroll(function(e){
-	  	parallaxScroll();
-	  });
+	// //Handles parallax
+	//   $(window).scroll(function(e){
+	//   	parallaxScroll();
+	//   });
 		 
-		function parallaxScroll(){
-			var scrolled = $(window).scrollTop();
-			if ($(window).width() > 820) {
-				$('.header__content').css('top',(340-(scrolled*.25))+'px');
-			}
-		}
+	// 	function parallaxScroll(){
+	// 		var scrolled = $(window).scrollTop();
+	// 		if ($(window).width() > 820) {
+	// 			$('.header__content').css('top',(340-(scrolled*.25))+'px');
+	// 		}
+	// 	}
 	 
 	 //Handles smooth scroll to anchor
 	 $(".scroll").click(function(event){
 	         event.preventDefault();
+	         // $(this).toggleClass('link_active');
 	         //calculate destination place
 	         var dest=0;
 	         if($(this.hash).offset().top > $(document).height()-$(window).height()){

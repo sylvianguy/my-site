@@ -55,7 +55,7 @@
 	<!-- .about -->
 	<div id="about" class="about">
 		<div class="profile_img">
-			<img src="./wp-content/themes/theme-hackeryou/images/sylvia_portrait.jpg" alt="">
+			<img src="/my-site/wp-content/themes/theme-hackeryou/images/sylvia_portrait.jpg" alt="">
 		</div>
 		<h2 id="about__heading">About Me</h2>
 		<p id="about__bio">My name is Sylvia Nguyen and I am a Toronto-based Front-end Developer specializing in designing and building visually compelling and beautifully functional websites. My communications background allows me to apply meaningful and creative detailing across my various works along with a great interest to create an intuitive user experience.</p>
@@ -77,7 +77,7 @@
 					
 					
 					<div class="blog_container">
-						<a href="<?php the_field('website_url'); ?>" target="_blank">
+						<a class="blog_link" href="<?php the_field('website_url'); ?>" target="_blank">
 							<div class="blog_square">
 								<?php echo get_the_post_thumbnail( $page->ID, 'medium' ); ?>
 							</div>
@@ -98,7 +98,7 @@
 	</div> <!-- /.blog -->
 
 	<!-- .form_section -->
-	<div class="form_section">
+	<div class="form_section" id="contact">
 		<div class="container">
 			<h2>Say Hello</h2>
 			<p>I’m always connecting with new people who sometimes tell me about all the coolest Mexican restaurants and coffee shops in the city. Know of any? If you’re not into either of those two things, I’d still love to hear from you!</p>
@@ -107,7 +107,7 @@
 				<br>
 				<input type="text" name="email" placeholder="Email Address">
 				<br>
-				<textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+				<textarea name="message" id="" cols="30" rows="4" placeholder="Your Message"></textarea>
 				<br>
 				<input type="submit" value="Submit">
 			</form>

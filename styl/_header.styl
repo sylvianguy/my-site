@@ -1,28 +1,31 @@
 @import '_mixins'
 @import '_typography'
 
+
+
 icon-style()
 	font-family FontAwesome
 	font-size 1.3em
 	position absolute
 	left 50%		
 	top 50%
-	transform translate(-50%, -50%)
+	transform-center-both()
 	color $accent-color
-	transition all .5s ease
+	transition all .3s ease
 	z-index 9999999999999
 
 heading-style()
 	color white
 	font-weight 100
-	font-size 1.8em
+	font-size 1.7em
+	line-height 1.5
 	font-weight roman
 	opacity 0.8
 	padding-bottom 4px
 
 
 header
-	background-image url("./images/hello_sylvia.png")
+	background-image geturl("/images/hello_sylvia.png")
 	height 100vh
 	background-attachment fixed
 	background-position center -14px
@@ -36,7 +39,7 @@ header
 			display block
 	&:after
 		content ""
-		background rgba(0 0 0 0.65)
+		background rgba(0 0 0 0.7)
 		width 100%
 		height 100%
 		position absolute
@@ -47,6 +50,9 @@ header
 		text-align center
 		position relative
 		padding-bottom 1px
+		max-width 555px
+		min-width 470px
+		margin 0 auto
 		&:after
 			content ""
 			width 200px
@@ -54,7 +60,7 @@ header
 			position absolute
 			bottom 0
 			left 50%
-			transform translateX(-50%)
+			transform-center-x()
 			background white
 		h2
 			heading-style()
@@ -70,7 +76,7 @@ header
 				li 
 					width 77px
 					display inline-block
-					transition all 1s ease
+					ease-transition()
 					
 					&.twitter
 						position relative
@@ -90,7 +96,7 @@ header
 					&.twitter,
 					&.email,
 					&.github
-						transition all 1s ease
+						ease-transition()
 						&:hover
 							.social__buttons-circle
 								&:before
@@ -111,10 +117,9 @@ header
 							position absolute
 							left 50%
 							top 50%
-							transform translate(-50%, -50%)
+							transform-center-both()
 							margin 0 auto
-							// background rgba(225,225,225,0.3)
-							transition all 0.3s ease
+							ease-transition()
 						
 	.arrow__down
 		padding-top 50px
@@ -142,16 +147,17 @@ header
 			
 		.arrow__down
 			display none
-			
+		.front-end
+			min-width 345px
 .container 
 	max-width 1200px
 	margin 0 auto
 	
 	.header__content
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+		position: absolute
+		top: 50%
+		left: 50%
+		transform-center-both()
 		z-index 100
 
 		

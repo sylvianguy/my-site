@@ -20,12 +20,10 @@ Default Styling
 */
 
 
-
-
-
 body 
 	color blue
 	font-family 'iowan-old-style'
+	
 
 
 	
@@ -38,8 +36,6 @@ body
 	-moz-column-gap 40px
 	column-gap 40px
 	
-	&.no__snapping
-		margin-top 225px
 
 
 	.work_container
@@ -51,27 +47,26 @@ body
 		background $ll-grey
 		transition all 0.5s ease
 		&:hover
-			.bottom_square
-				background $l-yellow
 			.work_square img
 				-webkit-transform scale(1.1)
 				transform: scale(1.1)
 
-		
+		.bottom_square
+			background white
 		.work_square
 			padding 76px 0
 			padding-top 30px
-			border-bottom 4px solid white
+			border-bottom 12px solid white
 			transition all 0.5s ease
 			img
 				-webkit-transform scale(1)
 				transform scale(1)
-				-webkit-transition all .3s ease
-				transition all .3s ease
-				-webkit-backface-visibility hidden 
+				ease-transition()
+				remove-blur() 
 
 		&:nth-child(1)
 			height 400px
+			// height 550px
 			border none
 			position relative
 			font-size 1.4em
@@ -79,15 +74,12 @@ body
 			background white
 			color $black
 			h2
-				// font-family 'Playfair Display', serif			
-				// font-style italic
-				// text-align center
-				// font-weight 400
 				color $black
-				position absolute
-				top 50%
-				left 50%
-				transform translateX(-50%) translateY(-50%)
+				z-index 1
+				padding-top 63px
+				max-width 263px
+				margin 0 auto
+					
 				&:before
 					content ""
 					width 260px
@@ -95,11 +87,11 @@ body
 					border 2px solid $accent-color 
 					position absolute
 					bottom 10px
-					right 14px
+					left 50%
 					z-index -1
-					-webkit-transform rotate(44deg)
-					-ms-transform rotate(44deg)
-					transform: rotate(44deg)
+					-webkit-transform translateX(-50%) rotate(44deg)
+					-ms-transform translateX(-50%) rotate(44deg)
+					transform: translateX(-50%) rotate(44deg)
 				&:after
 					content ""
 					width 100px
@@ -108,7 +100,7 @@ body
 					position absolute
 					bottom 0
 					left 50%
-					transform translateX(-50%)
+					transform-center-x()
 
 
 
@@ -117,17 +109,11 @@ body
 			height 100%
 		.bottom_square
 			width 100%
-			height 160px
-			padding 30px
-			transition all 0.5s ease
-			&:before
-				content ""
-				position absolute
-				width 100%
-				height 3px 
-				background white
-				top 0
-				left 0
+			// height 160px
+			padding 24px 30px 13px 29px
+			border-top 4px solid $ll-grey
+			position relative
+
 			h2
 				font-family 'iowan-old-style'
 				font-style normal
@@ -135,14 +121,12 @@ body
 				text-transform uppercase
 				color $black
 				font-size 1.3em
-				text-align center
+				text-align left
 			h3
 				font-size 1em
 				line-height 1.5
 				color $black
-				padding 0px 21px
-
-					
+				text-align left				
 
 @media $mobile-only
 	.work
@@ -150,6 +134,11 @@ body
 		-moz-column-count 1
 		column-count 1
 		margin-top 0
+
+@media $tablet-and-up
+	.work
+		&.no__snapping
+			margin-top 230px
 		
 
 .content 
@@ -159,8 +148,8 @@ body
 
 .about 
 	width 100%
-	height 950px
-	background url("./images/forest-large.jpg")
+	height 1010px
+	background geturl("/images/forest-large.jpg")
 	background-attachment fixed
 	background-position center center
 	background-size cover
@@ -175,7 +164,7 @@ body
 		top 0
 		left 0
 	.profile_img
-		width 286px
+		width 300px
 		margin 0 auto
 		padding-top 95px
 		position relative
@@ -195,13 +184,10 @@ body
 			-ms-transform: rotate(47deg)
 			transform: rotate(47deg)
 	h2
-		// font-family 'Playfair Display', serif			
-		// font-style italic
-		// text-align center
 		position relative
-		margin 23px 0
+		margin 35px 0
 		font-weight 400
-		margin-top 83px
+		margin-top 57px
 		&:after
 			content ""
 			width 100px
@@ -210,7 +196,7 @@ body
 			position absolute
 			bottom 0
 			left 50%
-			transform translateX(-50%)
+			transform-center-x()
 	p 	
 		font-family 'iowan-old-style'
 		font-size 1.2em
@@ -248,23 +234,18 @@ body
 	background white
 	width 100%
 	height auto
-	// height 1000px
 	position relative
 	padding-bottom 30px
 
 	.container
 		width 90%
 		text-align center
-		// padding-bottom 40px
 		
 		h2.blog_heading
-			// font-family 'Playfair Display', serif			
-			// font-style italic
 			margin 100px 0
 			font-size 5em
 			color $black
 			text-align left
-			// position relative
 			z-index 43
 			width 46%
 			display inline-block
@@ -293,25 +274,18 @@ body
 		.blog_container
 			border 1px solid rgb(133,133,133)
 			width 30%
-			height 550px
+			height 527px
 			display inline-block
 			vertical-align top
 			text-align left
 			position relative
 			z-index 53
-			// tansition all 1s ease
-			
+			ease-transition()
+			&:hover
+				box-shadow 0 2px 9px rgba(0,0,0,0.55)
+				-webkit-box-shadow 0 2px 9px rgba(0,0,0,0.55)
 			&:nth-child(4)
 				margin 0 1.6%
-			&:hover
-				.bottom_blog_square p
-					a:nth-child(2) 
-						background $black
-						border 2px solid $black
-						cursor pointer
-						color white
-				// .blog_square img
-				// 	opacity 0.6
 			.blog_square
 				width 100%
 				height 260px
@@ -326,26 +300,35 @@ body
 			.bottom_blog_square
 				margin 0 auto
 				padding 23px
+				position relative
+				height 265px
+				
+				
+				a.blog_link 
+					display block 
+					height 100%
+					
 				
 				h3
-					text-transform uppercase
 					margin-bottom 10px
 					line-height 1.5
 					color $black
-					border-bottom 2px solid $black
 					padding-bottom 8px
+					border-bottom 2px solid $black
+					position relative
+					font-weight 700
+					font-size 1.3em
+
 				p	
 					margin-top 15px
+					font-size 1em
 					a 
 						color $black
 						&:nth-child(2)
 							background none
-							border 2px solid $black
-							color $black
-							// color white
-							padding 8px
-							transition all .5s ease
-
+							position absolute
+							bottom 21px
+							left 26px
 							
 
 @media $small-desktop-and-down
@@ -358,7 +341,7 @@ body
 			h2.blog_heading
 				width 72%
 				min-width 484px
-				margin-bottom 20px
+				margin-bottom 55px
 			.blog_container
 				height 276px
 				width 100%
@@ -376,6 +359,10 @@ body
 					display inline-block
 					vertical-align top
 					margin 0
+					p 
+						font-size 1.1em
+						a:nth-child(2)
+							left 23px
 
 @media $mobile-and-down
 	.blog
@@ -397,11 +384,15 @@ body
 					height 230px
 				.bottom_blog_square
 					width 100%
+					p 
+						a:nth-child(2)
+							bottom 36px
+							left 22px
 
 .form_section
 	width 100%			
 	height 930px
-	background url("./images/forest-large.jpg")
+	background geturl("/images/forest-large.jpg")
 	background-attachment fixed
 	background-position center center
 	background-size cover
@@ -417,8 +408,8 @@ body
 	form
 		position relative
 		margin-top 200px
-		width 500px
-		max-width 60%
+		width 67%
+		max-width 570px
 		margin 0 auto
 		
 		input, textarea
@@ -445,7 +436,10 @@ body
 			border 1px solid $l-yellow
 			position absolute
 			right 0
-			bottom 0
+			top 245px
+			ease-transition()
+			&:hover
+				background rgba(225,225,225,0.2)
 	h2
 		padding-top 100px
 		padding-bottom 10px
@@ -457,7 +451,7 @@ body
 			position absolute
 			bottom 0
 			left 50%
-			transform translateX(-50%)
+			transform-center-x()
 		
 	p 
 		position relative
@@ -488,8 +482,6 @@ body
 					width 200px
 					height 200px
 
-
-
 @media $mobile-and-down
 	.work 
 		margin-top 0
@@ -506,11 +498,12 @@ h2.success__msg
 	color $l-yellow
 	margin 23px 0
 	font-weight 400
-	margin 210px auto
+	margin 0 auto
+	margin-top 170px
 	padding 0 40px
 
 .success__page
-	background url("./images/forest-large.jpg")
+	background geturl("/images/forest-large.jpg")
 	background-attachment fixed
 	background-position center center
 	background-size cover
@@ -524,6 +517,21 @@ h2.success__msg
 		top 0
 		left 0
 
+	a.back__button
+		width 220px
+		display block 
+		padding 10px
+		border 1px solid $l-yellow
+		color $l-yellow
+		font-size 1.5em
+		margin 0 auto
+		text-align center
+		margin-top 40px
+		position relative
+		ease-transition()
+		// transform-center-x()
+		&:hover
+			background rgba(225,225,225,0.2)
 
 
 
