@@ -1,9 +1,9 @@
-var gulp   = require('gulp'),
-		stylus = require('gulp-stylus'),
-		autoprefixer = require('gulp-autoprefixer'),
-		concat = require('gulp-concat'),
-		browserSync = require('browser-sync'),
-    	reload      = browserSync.reload;
+var 	gulp   			= require('gulp'),
+		stylus 			= require('gulp-stylus'),
+		autoprefixer 	= require('gulp-autoprefixer'),
+		concat 			= require('gulp-concat'),
+		browserSync 	= require('browser-sync'),
+    	reload      	= browserSync.reload;
 
 gulp.task('default', ['styles', 'watch']);
 
@@ -13,10 +13,20 @@ gulp.task('styles', function() {
 			'sourcemap=none': true,
 			errLogToConsole: true
 		}))
+		.pipe(autoprefixer())
 		.pipe(concat('style.css'))
 		.pipe(gulp.dest('.'))
 		.pipe(reload({stream: true}));
 });
+
+// gulp.task('default', function() {
+// 	return gulp.src('styl/**/*.styl')
+// 		.pipe(autoprefixer({
+// 			browsers: ['last 2 versions'],
+// 			cascade: false
+// 		}))
+// 		.pipe(gulp.dest('.'));
+// });
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -29,3 +39,4 @@ gulp.task('watch', function() {
 	gulp.watch('styl/**/*.styl', ['styles']);
 	gulp.watch('*.html', reload);
 });
+

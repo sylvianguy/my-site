@@ -55,7 +55,7 @@
 	<!-- .about -->
 	<div id="about" class="about">
 		<div class="profile_img">
-			<img src="/my-site/wp-content/themes/theme-hackeryou/images/sylvia_portrait.jpg" alt="">
+			<img src="/wp-content/themes/theme-hackeryou/images/sylvia_portrait.jpg" alt="">
 		</div>
 		<h2 id="about__heading">About Me</h2>
 		<p id="about__bio">My name is Sylvia Nguyen and I am a Toronto-based Front-end Developer specializing in designing and building visually compelling and beautifully functional websites. My communications background allows me to apply meaningful and creative detailing across my various works along with a great interest to create an intuitive user experience.</p>

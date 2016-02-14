@@ -1,5 +1,8 @@
 <?php
 
+update_option( 'siteurl', 'http://localhost:8888/my-site');
+update_option( 'home', 'localhost:8888/my-site');
+
 /** Tell WordPress to run theme_setup() when the 'after_setup_theme' hook is run. */
 
 if ( ! function_exists( 'theme_setup' ) ):

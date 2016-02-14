@@ -23,7 +23,7 @@
     <div class="header__content">
       <h1></h1>
       <div class="logo">
-        <img src="/my-site/wp-content/themes/theme-hackeryou/images/sylvia_logo_big_02.png" alt="">  
+        <img src="/wp-content/themes/theme-hackeryou/images/sylvia_logo_big_02.png" alt="">  
       </div>
       <div id="header__content" class="front-end">
         <h2>Hello there! I'm a front-end developer and I'm passionate about building things that function and look beautifully.</h2>
@@ -54,12 +54,12 @@
       <div class="menu__trigger-line"></div>
     </div>
     <div class="logo">
-      <img src="/my-site/wp-content/themes/theme-hackeryou/images/sylvia_logo_trimmed.png" alt="">
+      <img src="/wp-content/themes/theme-hackeryou/images/sylvia_logo_trimmed.png" alt="">
     </div>
     <ul id="toggler" class="menu">
       <li><a class="scroll" href="#work">WORK</a></li>
       <li><a class="scroll" href="#about">ABOUT</a></li>
-      <li><img src="/my-site/wp-content/themes/theme-hackeryou/images/sylvia_logo_final_black.png" alt=""></li>
+      <li><img src="/wp-content/themes/theme-hackeryou/images/sylvia_logo_final_black.png" alt=""></li>
       <li><a class="scroll" href="#blog">BLOG</a></li>
       <li><a class="scroll" href="#contact">CONTACT</a></li>
     </ul>

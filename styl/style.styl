@@ -211,6 +211,7 @@ body
 
 @media $mobile-and-down
 	.about
+		background-attachment scroll
 		height 1000px
 		h2
 			margin 63px 0 45px 0
@@ -283,7 +284,7 @@ body
 			ease-transition()
 			&:hover
 				box-shadow 0 2px 9px rgba(0,0,0,0.55)
-				-webkit-box-shadow 0 2px 9px rgba(0,0,0,0.55)
+				-webkit-box-shadow 0 2px 9px rgba(0,0,0,0.5)
 			&:nth-child(4)
 				margin 0 1.6%
 			.blog_square
@@ -462,16 +463,22 @@ body
 		padding-bottom 30px
 		margin-bottom 35px
 
+.full 
+	width 100%
+		
 @media $mobile-small
 	.form_section
 		height 990px
 		form
 			max-width 100%
 			width 100%
+
 			height 480px
-		
-.full 
-	width 100%
+
+
+@media $mobile-and-down
+	.form_section
+		background-attachment scroll
 
 			
 @media $small-desktop-and-down
@@ -532,6 +539,15 @@ h2.success__msg
 		// transform-center-x()
 		&:hover
 			background rgba(225,225,225,0.2)
+
+@media $mobile-and-down
+	h2.success__msg
+		font-size 2em
+		margin-top 130px
+	
+	.success__page
+		a.back__button
+			margin-top 27px
 
 
 

@@ -5,7 +5,7 @@ $small-desktop-and-down = "screen and (max-width: 950px)"
 $tablet-and-up   		= "screen and (min-width: 768px)"
 $desktop-and-up  		= "screen and (min-width: 1100px)"
 
-$prefix = "/my-site/wp-content/themes/theme-hackeryou"
+$prefix = "/wp-content/themes/theme-hackeryou"
 
 geturl($url)
     url($prefix + $url)
@@ -19,23 +19,16 @@ remove-blur()
 
 ease-transition()
 	transition all .3s ease
-	-webkit-transition all .3s ease
-	-moz-transition all .3s ease
 
 transform-center-both()
 	transform translate(-50%, -50%)
-	-ms-transform translate(-50%, -50%)
-	-webkit-transform translate(-50%, -50%) 
 
 transform-center-x()
-	transform translateX(-50%)
-	-ms-transform translateX(-50%)
-	-webkit-transform translateX(-50%) 
+	transform translateX(-50%) 
 
 transform-center-y()
 	transform translateY(-50%)  
-	-ms-transform translateY(-50%)
-	-webkit-transform translateY(-50%) 
+
 
 $grey = #BFBFC4
 $l-grey = #D1D2D4
